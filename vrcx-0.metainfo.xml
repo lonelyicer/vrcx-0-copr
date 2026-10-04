@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.map1en.vrcx0</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>VRCX-0</name>
+  <summary>Fast, lightweight companion for VRChat</summary>
+  <developer id="io.github.map1en">
+    <name>Map1en</name>
+  </developer>
+  <description>
+    <p>
+      Desktop companion for VRChat. See where your friends are, keep a history
+      of the people you have met and the worlds you have visited, and manage
+      your favorites.
+    </p>
+  </description>
+  <launchable type="desktop-id">VRCX-0.desktop</launchable>
+  <url type="homepage">https://github.com/Map1en/VRCX-0</url>
+  <url type="bugtracker">https://github.com/Map1en/VRCX-0/issues</url>
+  <url type="vcs-browser">https://github.com/Map1en/VRCX-0</url>
+  <provides>
+    <binary>vrcx-0</binary>
+  </provides>
+  <releases>
+    <release version="2.31.0" date="2026-10-04"/>
+  </releases>
+</component>

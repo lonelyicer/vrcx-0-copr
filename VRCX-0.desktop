@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=VRCX-0
+Comment=Fast, lightweight companion for VRChat
+Exec=vrcx-0
+Icon=vrcx-0
+Terminal=false
+Categories=Utility;
+StartupNotify=true
+StartupWMClass=vrcx-0
+MimeType=x-scheme-handler/vrcx-0;
+Keywords=VRChat;VRCX;
