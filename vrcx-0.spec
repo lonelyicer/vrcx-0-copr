@@ -8,6 +8,11 @@
 %global rustflags_debuginfo 1
 %global rustflags_codegen_units 8
 
+# rustc links bundled C (libwebp-sys and others) with ld.bfd and does not run
+# GCC's LTO plugin. Fedora's -flto=auto leaves WebPSafeMalloc and friends as
+# LTO-only symbols, so the final link fails with undefined references.
+%global _lto_cflags %{nil}
+
 Name:           vrcx-0
 Version:        2.31.0
 Release:        1%{?dist}
