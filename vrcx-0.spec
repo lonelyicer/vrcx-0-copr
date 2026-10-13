@@ -15,7 +15,7 @@
 
 Name:           vrcx-0
 Version:        2.32.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Fast, lightweight companion for VRChat
 
 License:        GPL-3.0-only
@@ -81,6 +81,9 @@ out from under the package manager.
 %build
 # Fedora exports RUSTFLAGS before this script. Those flags replace
 # .cargo/config.toml, so put the upstream CPU baseline and the build-id back.
+# aws-lc-sys requires jitterentropy-base.c to be compiled with -O0. Keep
+# Fedora's hardening flags, but put -O0 last so it overrides the injected -O2.
+export CFLAGS="${CFLAGS:-} -O0"
 export RUSTFLAGS="${RUSTFLAGS:-} -Ctarget-cpu=x86-64-v2 -Clink-arg=-Wl,-z,relro -Clink-arg=-Wl,-z,now -Clink-arg=-Wl,--build-id=sha1"
 export CARGO_PROFILE_RELEASE_LTO=thin
 export CARGO_HOME="%{_builddir}/.cargo"
@@ -127,5 +130,8 @@ install -Dm0644 %{SOURCE1} %{buildroot}%{_metainfodir}/io.github.map1en.vrcx0.me
 %{_datadir}/icons/hicolor/*/apps/vrcx-0.png
 
 %changelog
+* Mon Oct 05 2026 lonelyicer <lonelyicer@qq.com> - 2.32.0-2
+- Bump version to 2.32.0
+
 * Mon Oct 05 2026 lonelyicer <lonelyicer@qq.com> - 2.31.0-1
 - Package VRCX-0 2.31.0 for Fedora COPR
