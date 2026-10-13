@@ -14,7 +14,7 @@
 %global _lto_cflags %{nil}
 
 Name:           vrcx-0
-Version:        2.31.0
+Version:        2.32.0
 Release:        1%{?dist}
 Summary:        Fast, lightweight companion for VRChat
 
